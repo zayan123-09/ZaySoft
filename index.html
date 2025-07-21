@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZaySoft - Professional WordPress Website Development Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%), url('https://cdn1.genspark.ai/user-upload-image/22_generated/425c7d76-d719-4878-b5ce-b71e7e18b214');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            transition: all 0.3s ease;
+        }
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+        .service-icon {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .demo-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold gradient-text">ZaySoft</div>
+                    <div class="ml-3 text-sm text-gray-600">WordPress Solutions</div>
+                </div>
+                <a href="https://wa.me/923138022218" class="whatsapp-btn text-white px-6 py-2 rounded-full font-medium flex items-center space-x-2">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center text-white pt-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    Get a Professional Website for Your Business
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                    Mobile-Friendly, Affordable, and Delivered in Just 3–5 Days!
+                </p>
+                <a href="https://wa.me/923138022218" class="inline-block whatsapp-btn text-white px-8 py-4 rounded-full text-lg font-semibold pulse-animation">
+                    <i class="fab fa-whatsapp mr-3"></i>Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">Who Am I?</h2>
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-20 h-20 service-icon rounded-full flex items-center justify-center text-white text-2xl">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        My name is <strong>Zayan</strong>, and I build modern, mobile-friendly websites for small businesses, startups, and local shops.
+                        Whether you're a restaurant owner, doctor, tailor, or real estate agent — I can create a professional website that helps you get more customers and grow online.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">What I Can Do For You</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Business Website Design</h3>
+                        <p class="text-gray-600">Professional websites for all types of businesses</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Restaurant Menu Website</h3>
+                        <p class="text-gray-600">Online menus with ordering capabilities</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Clinic & Doctor Sites</h3>
+                        <p class="text-gray-600">Medical websites with appointment booking</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Real Estate Listings</h3>
+                        <p class="text-gray-600">Property showcase with detailed listings</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Portfolio Showcase</h3>
+                        <p class="text-gray-600">Professional portfolios for service providers</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Mobile Responsive</h3>
+                        <p class="text-gray-600">Perfect viewing on all devices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Projects Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-6">My Recent Work (Demos)</h2>
+                <p class="text-center text-gray-600 mb-12 text-lg">Here's a glimpse of the demo websites I've built. You can view them live.</p>
+                
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Demo 1: Restaurant -->
+                    <div class="demo-card rounded-2xl p-6 shadow-lg card-hover">
+                        <div class="bg-gradient-to-r from-orange-400 to-red-500 w-full h-48 rounded-xl mb-6 flex items-center justify-center text-white text-4xl">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Karachi Delights Restaurant</h3>
+                        <p class="text-gray-600 mb-4">Complete restaurant website with online menu, WhatsApp ordering, and contact information.</p>
+                        <a href="https://ccpkseza.gensparkspace.com/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Demo
+                        </a>
+                    </div>
+
+                    <!-- Demo 2: Medical Clinic -->
+                    <div class="demo-card rounded-2xl p-6 shadow-lg card-hover">
+                        <div class="bg-gradient-to-r from-green-400 to-blue-500 w-full h-48 rounded-xl mb-6 flex items-center justify-center text-white text-4xl">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Dr. Ahmed Medical Clinic</h3>
+                        <p class="text-gray-600 mb-4">Professional medical website with services, appointment booking, and patient information.</p>
+                        <a href="https://plvmfgba.gensparkspace.com/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Demo
+                        </a>
+                    </div>
+
+                    <!-- Demo 3: Real Estate -->
+                    <div class="demo-card rounded-2xl p-6 shadow-lg card-hover">
+                        <div class="bg-gradient-to-r from-purple-400 to-pink-500 w-full h-48 rounded-xl mb-6 flex items-center justify-center text-white text-4xl">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Prime Properties</h3>
+                        <p class="text-gray-600 mb-4">Real estate website with property listings, agent profiles, and contact forms.</p>
+                        <a href="https://uzbruflb.gensparkspace.com/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Why Work With Me?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
+                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Fast Delivery</h3>
+                        <p class="text-gray-600">Get your website ready within 3–5 days</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
+                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Friendly Communication</h3>
+                        <p class="text-gray-600">Basic Urdu/English support via WhatsApp</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
+                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Mobile Responsive</h3>
+                        <p class="text-gray-600">Perfect on mobile, tablet, and desktop</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
+                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">WhatsApp Support</h3>
+                        <p class="text-gray-600">No complicated forms, just message me</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
+                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Affordable Pricing</h3>
+                        <p class="text-gray-600">Starting from just Rs. 10,000</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
+                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">100% Satisfaction</h3>
+                        <p class="text-gray-600">Money-back guarantee if not satisfied</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6">Let's Get Started</h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Want to discuss your website? Just message me directly on WhatsApp – I reply quickly.
+                </p>
+                <a href="https://wa.me/923138022218" class="inline-block whatsapp-btn text-white px-8 py-4 rounded-full text-lg font-semibold pulse-animation">
+                    <i class="fab fa-whatsapp mr-3"></i>Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="text-2xl font-bold gradient-text mb-2">ZaySoft</div>
+                <p class="text-gray-400 mb-6">Affordable WordPress Solutions for Everyone</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="https://wa.me/923138022218" class="text-gray-400 hover:text-green-400 transition-colors">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                    <a href="mailto:info@zaysoft.com" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-700 pt-6">
+                    <p class="text-gray-500">© 2025 ZaySoft | All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
