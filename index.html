@@ -4,297 +4,594 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZaySoft - Professional WordPress Website Development Services</title>
+    
+    <!-- External Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-primary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover:before {
+            left: 100%;
+        }
+        
+        .navbar {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
         .hero-bg {
-            background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%), url('https://cdn1.genspark.ai/user-upload-image/22_generated/425c7d76-d719-4878-b5ce-b71e7e18b214');
+            background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('https://cdn1.genspark.ai/user-upload-image/22_generated/425c7d76-d719-4878-b5ce-b71e7e18b214');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            color: #667eea;
+        }
+        
+        .demo-image {
+            transition: all 0.3s ease;
+            filter: brightness(0.9);
+        }
+        
+        .demo-card:hover .demo-image {
+            filter: brightness(1);
+            transform: scale(1.05);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(45deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .card-hover {
-            transition: all 0.3s ease;
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #667eea, transparent);
+            margin: 3rem 0;
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        .whatsapp-btn {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            transition: all 0.3s ease;
-        }
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-        }
-        .service-icon {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-        }
-        .demo-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-lg fixed w-full top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <div class="text-2xl font-bold gradient-text">ZaySoft</div>
-                    <div class="ml-3 text-sm text-gray-600">WordPress Solutions</div>
+<body>
+    <!-- Classic Navigation Header -->
+    <nav class="navbar fixed w-full top-0 z-50 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+                    <span class="text-white font-bold text-lg">Z</span>
                 </div>
-                <a href="https://wa.me/923138022218" class="whatsapp-btn text-white px-6 py-2 rounded-full font-medium flex items-center space-x-2">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                </a>
+                <span class="text-2xl font-bold text-gradient">ZaySoft</span>
             </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">About</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Services</a>
+                <a href="#demos" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Portfolio</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+            </div>
+            
+            <a href="https://wa.me/923138022218" class="btn-primary text-white px-6 py-2 rounded-full font-medium">
+                <i class="fab fa-whatsapp mr-2"></i>Chat Now
+            </a>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center text-white pt-20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    Get a Professional Website for Your Business
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center text-white relative overflow-hidden">
+        <div class="container mx-auto px-6 z-10">
+            <div class="floating-animation">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Get a <span class="text-yellow-300">Professional Website</span><br>
+                    for Your Business
                 </h1>
-                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
                     Mobile-Friendly, Affordable, and Delivered in Just 3–5 Days!
                 </p>
-                <a href="https://wa.me/923138022218" class="inline-block whatsapp-btn text-white px-8 py-4 rounded-full text-lg font-semibold pulse-animation">
-                    <i class="fab fa-whatsapp mr-3"></i>Chat on WhatsApp
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/923138022218" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center">
+                    <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                    Chat on WhatsApp
+                </a>
+                <a href="#demos" class="glass-effect text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center hover:bg-white hover:text-gray-800 transition duration-300">
+                    <i class="fas fa-eye mr-3"></i>
+                    View My Work
                 </a>
             </div>
         </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-bold text-gray-800 mb-6">Who Am I?</h2>
-                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 service-icon rounded-full flex items-center justify-center text-white text-2xl">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        My name is <strong>Zayan</strong>, and I build modern, mobile-friendly websites for small businesses, startups, and local shops.
-                        Whether you're a restaurant owner, doctor, tailor, or real estate agent — I can create a professional website that helps you get more customers and grow online.
-                    </p>
-                </div>
-            </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 text-6xl opacity-20 floating-animation" style="animation-delay: -2s;">
+            <i class="fas fa-code"></i>
+        </div>
+        <div class="absolute bottom-20 right-10 text-4xl opacity-20 floating-animation" style="animation-delay: -4s;">
+            <i class="fas fa-mobile-alt"></i>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">What I Can Do For You</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
-                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+    <div class="bg-white">
+        <!-- About Me Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                        Who Am <span class="text-gradient">I?</span>
+                    </h2>
+                    <div class="section-divider w-24 mx-auto"></div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 card-hover">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/3 mb-8 md:mb-0">
+                                <div class="w-48 h-48 mx-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-6xl">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3 md:pl-12">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Hi, I'm Zayan!</h3>
+                                <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                                    I build modern, mobile-friendly websites for small businesses, startups, and local shops. 
+                                    Whether you're a restaurant owner, doctor, tailor, or real estate agent — I can create a 
+                                    professional website that helps you get more customers and grow online.
+                                </p>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">WordPress Expert</span>
+                                    <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">Mobile Responsive</span>
+                                    <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">Fast Delivery</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                        What I Can <span class="text-gradient">Do For You</span>
+                    </h2>
+                    <div class="section-divider w-24 mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="service-card bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="service-icon text-5xl text-blue-500 mb-6">
                             <i class="fas fa-laptop-code"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Business Website Design</h3>
-                        <p class="text-gray-600">Professional websites for all types of businesses</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Business Website Design</h3>
+                        <p class="text-gray-600">Professional websites for any business type</p>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
-                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+                    
+                    <div class="service-card bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="service-icon text-5xl text-orange-500 mb-6">
                             <i class="fas fa-utensils"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Restaurant Menu Website</h3>
-                        <p class="text-gray-600">Online menus with ordering capabilities</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Restaurant Menu Website</h3>
+                        <p class="text-gray-600">Beautiful menu displays with online ordering</p>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
-                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+                    
+                    <div class="service-card bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="service-icon text-5xl text-green-500 mb-6">
                             <i class="fas fa-stethoscope"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Clinic & Doctor Sites</h3>
-                        <p class="text-gray-600">Medical websites with appointment booking</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Clinic & Doctor Sites</h3>
+                        <p class="text-gray-600">Appointment booking and patient management</p>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
-                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+                    
+                    <div class="service-card bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="service-icon text-5xl text-purple-500 mb-6">
                             <i class="fas fa-home"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Real Estate Listings</h3>
-                        <p class="text-gray-600">Property showcase with detailed listings</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Real Estate Listings</h3>
+                        <p class="text-gray-600">Property showcases with search functionality</p>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
-                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
+                    
+                    <div class="service-card bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="service-icon text-5xl text-indigo-500 mb-6">
                             <i class="fas fa-briefcase"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Portfolio Showcase</h3>
-                        <p class="text-gray-600">Professional portfolios for service providers</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Portfolio Showcase</h3>
+                        <p class="text-gray-600">Display your work professionally</p>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
-                        <div class="service-icon w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Mobile Responsive</h3>
-                        <p class="text-gray-600">Perfect viewing on all devices</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demo Projects Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold text-center text-gray-800 mb-6">My Recent Work (Demos)</h2>
-                <p class="text-center text-gray-600 mb-12 text-lg">Here's a glimpse of the demo websites I've built. You can view them live.</p>
-                
-                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                    <!-- Demo 1: Restaurant -->
-                    <div class="demo-card rounded-2xl p-6 shadow-lg card-hover">
-                        <div class="bg-gradient-to-r from-orange-400 to-red-500 w-full h-48 rounded-xl mb-6 flex items-center justify-center text-white text-4xl">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Karachi Delights Restaurant</h3>
-                        <p class="text-gray-600 mb-4">Complete restaurant website with online menu, WhatsApp ordering, and contact information.</p>
-                        <a href="https://ccpkseza.gensparkspace.com/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                            <i class="fas fa-external-link-alt mr-2"></i>View Demo
-                        </a>
-                    </div>
-
-                    <!-- Demo 2: Medical Clinic -->
-                    <div class="demo-card rounded-2xl p-6 shadow-lg card-hover">
-                        <div class="bg-gradient-to-r from-green-400 to-blue-500 w-full h-48 rounded-xl mb-6 flex items-center justify-center text-white text-4xl">
-                            <i class="fas fa-stethoscope"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Dr. Ahmed Medical Clinic</h3>
-                        <p class="text-gray-600 mb-4">Professional medical website with services, appointment booking, and patient information.</p>
-                        <a href="https://plvmfgba.gensparkspace.com/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                            <i class="fas fa-external-link-alt mr-2"></i>View Demo
-                        </a>
-                    </div>
-
-                    <!-- Demo 3: Real Estate -->
-                    <div class="demo-card rounded-2xl p-6 shadow-lg card-hover">
-                        <div class="bg-gradient-to-r from-purple-400 to-pink-500 w-full h-48 rounded-xl mb-6 flex items-center justify-center text-white text-4xl">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Prime Properties</h3>
-                        <p class="text-gray-600 mb-4">Real estate website with property listings, agent profiles, and contact forms.</p>
-                        <a href="https://uzbruflb.gensparkspace.com/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                            <i class="fas fa-external-link-alt mr-2"></i>View Demo
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Me Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Why Work With Me?</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
-                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Fast Delivery</h3>
-                        <p class="text-gray-600">Get your website ready within 3–5 days</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
-                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Friendly Communication</h3>
-                        <p class="text-gray-600">Basic Urdu/English support via WhatsApp</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
-                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Mobile Responsive</h3>
-                        <p class="text-gray-600">Perfect on mobile, tablet, and desktop</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
-                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                    
+                    <div class="service-card bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="service-icon text-5xl text-green-600 mb-6">
                             <i class="fab fa-whatsapp"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">WhatsApp Support</h3>
-                        <p class="text-gray-600">No complicated forms, just message me</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">WhatsApp Integration</h3>
+                        <p class="text-gray-600">Direct customer communication setup</p>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
-                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                    
+                    <div class="service-card bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="service-icon text-5xl text-red-500 mb-6">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Google Maps Integration</h3>
+                        <p class="text-gray-600">Easy location finding for customers</p>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="service-icon text-5xl text-blue-600 mb-6">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Mobile Responsive</h3>
+                        <p class="text-gray-600">Perfect on all devices and screens</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Projects Section -->
+        <section id="demos" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                        My Recent <span class="text-gradient">Work</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">Here's a glimpse of the demo websites I've built. You can view them live.</p>
+                    <div class="section-divider w-24 mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="demo-card bg-white rounded-2xl shadow-2xl overflow-hidden card-hover">
+                        <div class="h-64 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center overflow-hidden">
+                            <div class="demo-image text-white text-6xl">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Karachi Delights Restaurant</h3>
+                            <p class="text-gray-600 mb-6">Pakistani cuisine with online menu and WhatsApp ordering system</p>
+                            <a href="https://ccpkseza.gensparkspace.com/" target="_blank" 
+                               class="btn-primary text-white px-6 py-3 rounded-full inline-flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                View Demo
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-card bg-white rounded-2xl shadow-2xl overflow-hidden card-hover">
+                        <div class="h-64 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center overflow-hidden">
+                            <div class="demo-image text-white text-6xl">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Dr. Ahmed Medical Clinic</h3>
+                            <p class="text-gray-600 mb-6">Healthcare services with appointment booking system</p>
+                            <a href="https://plvmfgba.gensparkspace.com/" target="_blank" 
+                               class="btn-primary text-white px-6 py-3 rounded-full inline-flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                View Demo
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-card bg-white rounded-2xl shadow-2xl overflow-hidden card-hover">
+                        <div class="h-64 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center overflow-hidden">
+                            <div class="demo-image text-white text-6xl">
+                                <i class="fas fa-home"></i>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Prime Properties</h3>
+                            <p class="text-gray-600 mb-6">Real estate listings with property search functionality</p>
+                            <a href="https://uzbruflb.gensparkspace.com/" target="_blank" 
+                               class="btn-primary text-white px-6 py-3 rounded-full inline-flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                View Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Me Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                        Why Work <span class="text-gradient">With Me?</span>
+                    </h2>
+                    <div class="section-divider w-24 mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="text-5xl text-blue-500 mb-6">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Fast Delivery</h3>
+                        <p class="text-gray-600">Your website ready within 3–5 days guaranteed</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="text-5xl text-green-500 mb-6">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Friendly Communication</h3>
+                        <p class="text-gray-600">Basic Urdu/English support via WhatsApp</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="text-5xl text-purple-500 mb-6">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Fully Responsive</h3>
+                        <p class="text-gray-600">Perfect on mobile, tablet, and desktop</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="text-5xl text-green-600 mb-6">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">WhatsApp Support</h3>
+                        <p class="text-gray-600">No complicated forms, just simple messaging</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="text-5xl text-orange-500 mb-6">
                             <i class="fas fa-dollar-sign"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Affordable Pricing</h3>
-                        <p class="text-gray-600">Starting from just Rs. 10,000</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Affordable Pricing</h3>
+                        <p class="text-gray-600">Starting from Rs. 10,000 only</p>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover">
-                        <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
-                            <i class="fas fa-star"></i>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                        <div class="text-5xl text-red-500 mb-6">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">100% Satisfaction</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">100% Satisfaction</h3>
                         <p class="text-gray-600">Money-back guarantee if not satisfied</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold mb-6">Let's Get Started</h2>
-                <p class="text-xl mb-8 opacity-90">
-                    Want to discuss your website? Just message me directly on WhatsApp – I reply quickly.
-                </p>
-                <a href="https://wa.me/923138022218" class="inline-block whatsapp-btn text-white px-8 py-4 rounded-full text-lg font-semibold pulse-animation">
-                    <i class="fab fa-whatsapp mr-3"></i>Chat on WhatsApp
-                </a>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 gradient-bg">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        Let's Get <span class="text-yellow-300">Started</span>
+                    </h2>
+                    <p class="text-xl text-white opacity-90 mb-8">
+                        Want to discuss your website? Just message me directly on WhatsApp – I reply quickly.
+                    </p>
+                    
+                    <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl p-8 md:p-12 mb-8">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+                            <div class="flex flex-col items-center">
+                                <div class="text-4xl mb-4">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold mb-2">WhatsApp</h3>
+                                <p class="opacity-80">+92 313 8022218</p>
+                            </div>
+                            
+                            <div class="flex flex-col items-center">
+                                <div class="text-4xl mb-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold mb-2">Response Time</h3>
+                                <p class="opacity-80">Within 2 hours</p>
+                            </div>
+                            
+                            <div class="flex flex-col items-center">
+                                <div class="text-4xl mb-4">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold mb-2">Languages</h3>
+                                <p class="opacity-80">English & Urdu</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/923138022218" 
+                           class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center justify-center transition duration-300 pulse-animation">
+                            <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                            Chat on WhatsApp
+                        </a>
+                        <a href="tel:+923138022218" 
+                           class="glass-effect text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center justify-center hover:bg-white hover:text-gray-800 transition duration-300">
+                            <i class="fas fa-phone mr-3"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <div class="text-2xl font-bold gradient-text mb-2">ZaySoft</div>
-                <p class="text-gray-400 mb-6">Affordable WordPress Solutions for Everyone</p>
-                <div class="flex justify-center space-x-6 mb-6">
-                    <a href="https://wa.me/923138022218" class="text-gray-400 hover:text-green-400 transition-colors">
-                        <i class="fab fa-whatsapp text-2xl"></i>
-                    </a>
-                    <a href="mailto:info@zaysoft.com" class="text-gray-400 hover:text-blue-400 transition-colors">
-                        <i class="fas fa-envelope text-2xl"></i>
-                    </a>
-                </div>
-                <div class="border-t border-gray-700 pt-6">
-                    <p class="text-gray-500">© 2025 ZaySoft | All Rights Reserved.</p>
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-xl">Z</span>
+                        </div>
+                        <span class="text-3xl font-bold text-gradient">ZaySoft</span>
+                    </div>
+                    
+                    <p class="text-lg text-gray-300 mb-6">
+                        Affordable WordPress Solutions for Everyone
+                    </p>
+                    
+                    <div class="flex justify-center space-x-6 mb-8">
+                        <a href="https://wa.me/923138022218" class="text-gray-400 hover:text-green-500 transition duration-300">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-500 transition duration-300">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="border-t border-gray-700 pt-8">
+                        <p class="text-gray-400">
+                            © 2025 <strong>ZaySoft</strong> | All Rights Reserved.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all card elements
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
